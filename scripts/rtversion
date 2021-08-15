@@ -8,7 +8,7 @@
 #
 ######################################################################
 
-sourcedir='http://rtorrent.net/downloads/'
+sourcedir='https://github.com/rakshasa/rtorrent-archive/'
 rt_latest=$(wget -q -O - $sourcedir | grep -o "rtorrent-[0-9]\{1,2\}\.[0-9]\{1,2\}\.[0-9]\{1,2\}" | sort -uV | tail -1 | grep -o "[0-9]\{1,2\}\.[0-9]\{1,2\}\.[0-9]\{1,2\}")
 ru_latest=$(curl -s https://raw.githubusercontent.com/Novik/ruTorrent/master/js/webui.js | grep -m 1 version: | cut -d \" -f2)
 
@@ -49,7 +49,7 @@ if [ -z $branch ]; then
       echo "This is the latest release"
     else
       echo "Use rtsetup to update to rtinst $latest"
-    fi   
+    fi
   fi
 else
   echo "Current Branch: $branch"
